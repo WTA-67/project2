@@ -3,6 +3,7 @@ const {engine}=require('express-handlebars');
 const bodyParser=require('body-parser');
 const path=require('path');
 const dotenv=require('dotenv');
+const tasksRoutes=require('./routes/tasks');
 dotenv.config({path:'./.env'});
 
 const app=express();
@@ -36,6 +37,8 @@ app.listen(app.get('port'),()=>{
 console.log('Server is running at port' ,app.get('port'));
 
 });
+
+app.use('/',tasksRoutes);
 
 app.get('/',(req,res)=>{
     res.render('home');
