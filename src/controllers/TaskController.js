@@ -6,13 +6,16 @@ function index(req,res){
       {
           if(err)
           {
-              console.log(err);
-              return err
-          }
-          else{
-              console.log("connectedd1");
-              console.log(result);
-          }
+            console.log(err);
+            return err
+        }
+        else{
+            console.log("connectedd1");
+            console.log(result);
+          //   res.render('tasks/index',{tasks:[{id :1,title:"hello"}]});
+            res.render('tasks/index',{tasks:result});
+        }
+
 
       });
     });
