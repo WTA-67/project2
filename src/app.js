@@ -8,6 +8,13 @@ const tasksRoutes=require('./routes/tasks');
 
 dotenv.config({path:'./.env'});
 const connection = require("express-myconnection")
+const dbOptions = {
+    host:process.env.DATABASE_HOST,
+    user:process.env.DATABASE_USER,
+    password:process.env.DATABASE_PASSWORD,
+    database:process.env.DATABASE
+};
+
 const app=express();
 app.set('port',30000);
 
