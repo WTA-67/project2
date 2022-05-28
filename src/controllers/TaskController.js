@@ -4,13 +4,26 @@ function index(req,res){
 
 }
 function create(req,res){
-    console.log(req);
-    res.send("hello word")
     res.render('tasks/create');
 
 }
-function mytasks(req,res){
-    res.render('tasks/mytasks');
+function store(req,res){
+    
+    const data=req.body;
+    console.log(data);
+    db.connect((error)=>{
+if(error){
+    console.log(error)
+}
+else{
+    console.log("connected")
+}
+})
+
+
+
+    res.render('tasks/create')
+    
 
 }
 
