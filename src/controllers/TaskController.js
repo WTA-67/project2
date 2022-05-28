@@ -32,10 +32,32 @@ function store(req,res){
     
     const data=req.body;
     console.log(data);
+
+   let values = 
+    [
+        [data.tasks,data.Password]
+    ];
     req.getConnection(function(err,db)
     {
-      db.query("Select * from users")
+              db.query("insert into users (title,task) values?",[values],function(err,result)
+      {
+          if(err)
+          {
+              console.log(err);
+              return err
+          } 
+          else{
+              
+              console.log(result);
+          }
+
+      });
+   
     });
+        
+        
+        
+  
         
         
         
