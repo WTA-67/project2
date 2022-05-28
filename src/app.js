@@ -30,31 +30,21 @@ app.engine('.hbs',engine({
 }))
 app.set('view engine','hbs');
 
-const mysql=require("mysql");
-const db=mysql.createConnection({
-        host:process.env.DATABASE_HOST,
-        user:process.env.DATABASE_USER,
-        password:process.env.DATABASE_PASSWORD,
-        database:process.env.DATABASE
-});
-db.connect((error)=>{
-if(error){
-    console.log(error)
-}
-else{
-    console.log("connected")
-}
-})
-
-
+app.use(connection(mysql,dbOptions,'single'));
 
 app.listen(app.get('port'),()=>{
 console.log('Server is running at port' ,app.get('port'));
 
 });
-
 app.use('/',tasksRoutes);
 
 app.get('/',(req,res)=>{
     res.render('home');
 });
+
+app.post('/create',(req,res)=>{
+    console.log(req);
+    res.render('home');
+});
+
+
