@@ -12,10 +12,12 @@
         </tr>
       </thead>
       <tbody>
+      {{#each tasks}}
+     
       
         <tr>
-          <td class="py-3 px-6">jkl</td>
-          <td class="p-3">hjh</td>
+          <td class="py-3 px-6">{{this.id}}</td>
+          <td class="p-3">{{this.title}}</td>
           <td class="p-3 text-center">12-3-11 12:40:43</td>
           <td class="p-3 text-center">12-15-46 12:40:43</td>
           <td class="p-3 text-center">2314 12:40:43</td>
