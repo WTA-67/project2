@@ -1,7 +1,23 @@
-const connection = require("express-myconnection");
-function index(req,res){
-    res.render('tasks/index');
 
+function index(req,res){
+    req.getConnection(function(err,db)
+    {
+       db.query("Select * from users",[],function(err,result)
+      {
+          if(err)
+          {
+              console.log(err);
+              return err
+          }
+          else{
+              console.log("connectedd1");
+              console.log(result);
+          }
+
+      });
+    });
+    
+    
 }
 function store(req,res){
     
