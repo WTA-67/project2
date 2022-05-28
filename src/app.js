@@ -3,11 +3,19 @@ const {engine}=require('express-handlebars');
 const bodyParser=require('body-parser');
 const path=require('path');
 const dotenv=require('dotenv');
+const mysql=require("mysql");
 const tasksRoutes=require('./routes/tasks');
-dotenv.config({path:'./.env'});
 
+dotenv.config({path:'./.env'});
+const connection = require("express-myconnection")
 const app=express();
-app.set('port',8081);
+app.set('port',30000);
+
+app.use(bodyParser.urlencoded({
+    extended:true
+}));
+
+app.use(bodyParser.json());
 
 app.set('views',__dirname+'/views');
 app.engine('.hbs',engine({
