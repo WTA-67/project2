@@ -21,6 +21,13 @@ function index(req,res){
     
     
 }
+function create(req,res){
+   
+    
+    res.render('tasks/create');
+    
+
+}
 function store(req,res){
     
     const data=req.body;
