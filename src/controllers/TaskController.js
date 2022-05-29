@@ -40,7 +40,7 @@ function store(req,res){
     ];
     req.getConnection(function(err,db)
     {
-              db.query("insert into users (Book name,Author Name,Publication Date,Rack Numbe)  values?",[values],function(err,result)
+              db.query("insert into users (Book_name,Author_Name,Publication_Date,Rack_Numbe)  values?",[values],function(err,result)
       {
           if(err)
           {
