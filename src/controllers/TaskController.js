@@ -48,7 +48,7 @@ function store(req,res){
               return err
           } 
           else{
-              
+            console.log("connectedd1");
               console.log(result);
           }
 
