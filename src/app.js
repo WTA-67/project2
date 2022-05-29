@@ -29,6 +29,14 @@ app.engine('.hbs',engine({
     extname:'.hbs'
 }))
 app.set('view engine','hbs');
+// console.log(process.env.DATABASE_USER);
+// console.log(process.env.DATABASE_HOST);
+// const db=mysql.createConnection({
+//         host:process.env.DATABASE_HOST,
+//         user:process.env.DATABASE_USER,
+//         password:process.env.DATABASE_PASSWORD,
+//         database:process.env.DATABASE
+// });
 
 app.use(connection(mysql,dbOptions,'single'));
 
