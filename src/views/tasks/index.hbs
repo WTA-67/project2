@@ -16,10 +16,11 @@
     </tr>
     {{#each tasks}}
       <tr>
-        <td class="py-3">{{this.Book_name}}</td>
-        <td class="py-3">{{this.Author_Name}}</td>
-        <td class="py-3">{{this.Publication_Date}}</td>
-        <td class="py-3">{{this.Rack_Number}}</td>
+        <td class="py-3">{{this.id}}</td>
+        <td class="py-3">{{this.Bookname}}</td>
+        <td class="py-3">{{this.AuthorName}}</td>
+        <td class="py-3">{{this.PublicationDate}}</td>
+        <td class="py-3">{{this.RackNumbe}}</td>
          <td class="py-3"></td>
         <td>
             <a href="/products/edit-form/{{this.id}}" class="btn btn-info btn-sm">Edit</a>
