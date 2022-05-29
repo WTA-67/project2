@@ -1,33 +1,31 @@
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-div{
-display: flex;
-	justify-content: space-around;
-	align-items: center;
-}
+<div class="container">
+  <h1>{{title}}</h1>
+  <hr />
+  <div class="row">
+    <div class="col-md-6">
+      <form action="/create" method="post">
 
-</style>
-<body>
-    <form action="/create" method="post">
-  <div class="mb-3">
-    <label >tasks</label>
-    <input type="text" name="tasks" >
-    
-  <div class="mb-3">
-    <label >Password</label>
-    <input type="text" name="Password">
+          <div class="form-group">
+              <input type="text" name="Book_name" class="form-control" placeholder="Book_name" />
+          </div>
+
+          <div class="form-group">
+              <input type="text" name="Author_Name" class="form-control" placeholder="Author_Name" />
+          </div>
+
+          <div class="form-group">
+              <input type="text" name="Publication_Date" class="form-control" placeholder="Publication_Date" />
+          </div>
+
+          <div class="form-group">
+              <input type="text" name="Rack_Number" class="form-control" placeholder="Rack_Number" />
+          </div>
+          
+          <div class="form-group">
+              <button class="btn btn-info">Save Product</button>
+          </div>
+      </form>
+    </div>
   </div>
-  <div class="mb-3 ">
-   
-  </div>
-  <button type="sent" >sent</button>
-</form>
-</body>
-</html>
+</div>
