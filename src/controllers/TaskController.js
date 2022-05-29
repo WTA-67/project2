@@ -36,11 +36,11 @@ function store(req,res){
 
    let values = 
     [
-        [data.Book_name,data.Author_Name,data.Publication_Date,data.Rack_Number]
+        [data.Bookname,data.AuthorName,data.PublicationDate,data.RackNumbe]
     ];
     req.getConnection(function(err,db)
     {
-              db.query("insert into users (Book_name,Author_Name,Publication_Date,Rack_Numbe)  values?",[values],function(err,result)
+        db.query("insert into users (Bookname,AuthorName,PublicationDate,RackNumbe) values?",[values],function(err,result)
       {
           if(err)
           {
