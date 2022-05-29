@@ -10,7 +10,8 @@ function index(req,res){
             return err
         }
         else{
-           
+            console.log("Save");
+            console.log(result);
           //   res.render('tasks/index',{tasks:[{id :1,title:"hello"}]});
             res.render('tasks/index',{tasks:result});
         }
@@ -35,11 +36,11 @@ function store(req,res){
 
    let values = 
     [
-        [data.tasks,data.Password]
+        [data.Book_name,data.Author_Name,data.Publication_Date,data.Rack_Number]
     ];
     req.getConnection(function(err,db)
     {
-              db.query("insert into users (title,task) values?",[values],function(err,result)
+              db.query("insert into users (Book name,Author Name,Publication Date,Rack Numbe)  values?",[values],function(err,result)
       {
           if(err)
           {
@@ -69,5 +70,5 @@ function store(req,res){
 module.exports={
     index:index,
     create:create,
-    mytasks: mytasks,
+   store: store,
 }
